@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Registration form</title>
+        <style>
+            th,td{color:white;}
+        </style>
+    </head>
+    <body bgcolor="#ob905c">
+        <form action="product" method="POST">
+            {% csrf_token %}
+            <center>
+            <table bgcolor="#232020" border="0px" cellpadding="10px" cellspacing="5px">
+                <tr>
+                    <th colspan="2" ><p style="font-size:20px">Registration form</p></th>
+                </tr>
+                <tr>
+                    <td> Name </td>
+                    <td><input type="text" size="25" name="Name"></td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td><input type="date" style="width:200px" name="DOB"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="Password" style="width:200px" name="Password"></td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>
+                        <select style="width:200px;height:25px" name="Course">
+                            <option>Select course </option>
+                            <option>B.SC</option>
+                            <option>M.SC</option>
+                            <option>MCA</option>
+                            <option>BCA</option>
+                        </select>
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td>Address</td>
+                    <td><textarea style="width:200px" name="Address"> </textarea></td>
+                </tr>
+
+                <tr>
+                    <td>Mail</td>
+                    <td><input type="mail" style="width:200px" name="Mail"></td>
+                </tr>
+
+               
+                
+
+               
+                <tr>
+                    <td>
+                        <center><input type="submit" value="submit"></center>
+                        
+                    </td>
+                   
+                </tr>
+                
+
+
+
+            </table>
+        </center>
+            
+           
+            
+        </form>
+         
+    </body>
+</html> 

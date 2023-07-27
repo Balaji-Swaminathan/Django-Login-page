@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Registration</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: white;
+        
+        table {
+            background-color: #6749e0;
+            border: 0;
+            padding: 10px;
+            margin: auto;
+        }
+        th, td {
+            padding: 5px;
+        }
+        select, input[type="text"], input[type="password"], textarea {
+            width: 200px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form action="update" method="POST">
+        {% csrf_token %}
+        <center>
+            <table border="0" cellpadding="10" cellspacing="5">
+                <tr>
+                    <th colspan="2"><p style="font-size: 20px;">Update Registration</p></th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="Name" value="{{ name }}"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="date" name="DOB" value="{{ dob }}"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="Password" value=""></td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>
+                        <select name="Course">
+                            <option value="" disabled>Select course</option>
+                            <option value="B.SC" {% if course == 'B.SC' %}selected{% endif %}>B.SC</option>
+                            <option value="M.SC" {% if course == 'M.SC' %}selected{% endif %}>M.SC</option>
+                            <option value="MCA" {% if course == 'MCA' %}selected{% endif %}>MCA</option>
+                            <option value="BCA" {% if course == 'BCA' %}selected{% endif %}>BCA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="Address">{{ address }}</textarea></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="Mail" value="{{ email }}"></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input type="tel" name="Phone" value="{{ phone }}"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <label><input type="radio" name="Gender" value="Male" {% if gender == 'Male' %}checked{% endif %}>Male</label>
+                        <label><input type="radio" name="Gender" value="Female" {% if gender == 'Female' %}checked{% endif %}>Female</label>
+                        <label><input type="radio" name="Gender" value="Other" {% if gender == 'Other' %}checked{% endif %}>Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agree to Terms</td>
+                    <td><input type="checkbox" name="AgreeToTerms" {% if agree_to_terms %}checked{% endif %}></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <center><input type="submit" value="Update"></center>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </form>
+</body>
+</html>
